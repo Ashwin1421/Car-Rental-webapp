@@ -1,0 +1,45 @@
+nav.navbar.navbar-default
+  // Brand and toggle get grouped for better mobile display
+  .navbar-header
+    button.navbar-toggle(type='button', data-target='#navbarCollapse', data-toggle='collapse')
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand(href='/') EZRide
+  // Collection of nav links, forms, and other content for toggling
+  #navbarCollapse.collapse.navbar-collapse
+    ul.nav.navbar-nav
+      li.active
+        a(href='/') Home  
+          span.glyphicon.glyphicon-home
+      li
+        a(href='#') Profile
+      li.dropdown
+        a.dropdown-toggle(data-toggle='dropdown', href='#')
+          | Messages 
+          b.caret
+        ul.dropdown-menu
+          li
+            a(href='#') Inbox
+          li
+            a(href='#') Drafts
+          li
+            a(href='#') Sent Items
+          li.divider
+          li
+            a(href='#') Trash
+    form.navbar-form.navbar-left
+      .input-group
+        input.form-control(type='text', placeholder='Search')
+        span.input-group-btn
+          button.btn.btn-default(type='button')
+            span.glyphicon.glyphicon-search
+    ul.nav.navbar-nav.navbar-right
+      li
+        a(href='/login') Login 
+          span.glyphicon.glyphicon-log-in
+      if(user)
+        li
+          a(href='/logout') Logout 
+            span.glyphicon.glyphicon-log-out
