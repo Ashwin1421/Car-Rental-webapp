@@ -1,14 +1,16 @@
-<h1>Home Page</h1>
 <p>
-    <a href="/#/add-video">Add a Video</a>
-    {{video.user}}
+    <a href="/#/add-Car">Add a Car</a>
+    {{Car.user}}
 </p>
-<li ng-repeat='video in videos'>
-	<a href="/#/video/{{video._id}}">
-		<img src="../images/{{video.thumbnail}}">
-		{{video.title}}
+<li ng-repeat='car in cars'>
+	<a href="/#/car/{{car._id}}">
+		{{Car.title}}
+		<br>
+		<img src="../images/{{car.image}}" width="15%" height="15%">
+		
+		
 	</a>
-    <a href="/#/video/delete/{{video._id}}">
+    <a href="/#/car/delete/{{car._id}}">
         <i class="glyphicon glyphicon-remove"></i>
     </a>
 </li>

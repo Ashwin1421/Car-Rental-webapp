@@ -1,4 +1,6 @@
 extends layout
 
 block content
+  if(user)
+    div(ng-view)
   include rental-form

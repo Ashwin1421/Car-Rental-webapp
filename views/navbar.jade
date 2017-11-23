@@ -13,8 +13,6 @@ nav.navbar.navbar-default
       li.active
         a(href='/') Home  
           span.glyphicon.glyphicon-home
-      li
-        a(href='#') Profile
       li.dropdown
         a.dropdown-toggle(data-toggle='dropdown', href='#')
           | Messages 
@@ -37,9 +35,36 @@ nav.navbar.navbar-default
             span.glyphicon.glyphicon-search
     ul.nav.navbar-nav.navbar-right
       li
-        a(href='/login') Login 
-          span.glyphicon.glyphicon-log-in
-      if(user)
-        li
-          a(href='/logout') Logout 
-            span.glyphicon.glyphicon-log-out
+        if(user)
+          a.dropdown-toggle(data-toggle='dropdown', href='#') Welcome, #{user.name}  
+              span.glyphicon.glyphicon-user
+          ul.dropdown-menu
+            li
+              a(href='#') Profile
+            li
+              a(href='#') Orders
+            li.divider
+            li
+              a(href='/logout') Sign-Out  
+                span.glyphicon.glyphicon-log-out
+        if(!user)
+          a.dropdown-toggle(data-toggle='dropdown', href='#') 
+              span.glyphicon.glyphicon-user
+          ul.dropdown-menu
+            li
+              a(href='/login') Sign-in  
+                span.glyphicon.glyphicon-log-in
+    if(user)
+      if(user.admin)
+        ul.nav.navbar-nav.navbar-right
+          li
+            a.dropdown-toggle(data-toggle='dropdown', href='#') Admin Controls
+              &nbsp;
+              span.glyphicon.glyphicon-cog
+            ul.dropdown-menu
+              li
+                a(href='#') View Cars
+              li
+                a(href='/#/add-Car') Add Car 
+              li
+                a(href='#') More options

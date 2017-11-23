@@ -1,0 +1,27 @@
+
+<h3>Add a Car</h3>
+
+<form id= "form">
+    <div class="form-group">
+        <label>Title</label>        
+        <input type="text" class="form-control" ng-model="Car.title"></input>
+    </div>
+        <div class="form-group">
+        <label>Type</label>
+        <input type="text" class="form-control" ng-model="Car.type" placeholder="Sedan/SUV/.."></input>
+    </div>
+    <div class="form-group">
+        <label>Features</label>
+        <input type="textarea" name="" class="form-control" ng-model="Car.Features" placeholder="Enter Car Features"></input>
+    </div>
+    <div class="form-group">
+        <label>No of Passengers</label>
+        <input type="text" class="form-control" ng-model="Car.passengers" placeholder="Enter max number of passengers"></input>
+    </div>
+    <input type="button" class="btn btn-primary" value="Save" ng-click="save()"></input>    
+</form>
+<form action='/imageupload/upload' method='POST' enctype='multipart/form-data'>
+    select an image to upload:
+    <input type="file" name="image">
+    <input type="submit" name="Upload Image">
+</form>

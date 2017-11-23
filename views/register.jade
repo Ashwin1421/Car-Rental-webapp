@@ -1,17 +1,21 @@
-extends layout
+extends user-layout
 
 block content
   .container
-    h1 Register Page
-    br
-    form(role='form', action="/register",method="post", style='max-width: 300px;')
-      .form-group
-        input.form-control(type='text', id="register-username", name="username", placeholder='Enter Username')
-      .form-group
-        input.form-control(type='password', name="password", placeholder='Password')
-      button.btn.btn-default(type='submit') Submit
-      &nbsp;
+  .card.card-container#register-form
+    h2 New Account
+    form.form-signin(role='form', action='/register', method='post')
+      label.control-label(for='name') Full Name:
+      input#name.form-control(type='text', name='name', placeholder='Full Name', required='')
+      label.control-label(for='username') New Username:
+      .form-group.has-feedback#username-form-group
+        input#username.form-control(type='text', name='username', placeholder='Enter username', required='')
+        span#username-status-icon.glyphicon.form-control-feedback
+      label.control-label(for='password') Set Password:
+      input#password.form-control(type='password', name='password', placeholder='Enter password', required='')
+      label.control-label(for='confirm-password') Confirm Password:
+      input#confirm-password.form-control(type='password', name='confirm-password', placeholder='Enter password', required='')
+      button.btn.btn-success(type='submit') Sign-Up
       a(href='/')
-        button.btn.btn-primary(type="button") Cancel
-    br
-    h4= info
+        button.btn.btn-primary(type='button') Cancel
+      h4= info

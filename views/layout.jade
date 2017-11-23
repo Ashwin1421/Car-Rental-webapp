@@ -1,16 +1,21 @@
 doctype html
-html(ng-app='Vidzy')
+html(ng-app='car-rental-app')
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js')
-    script(src='/javascripts/vidzy.js')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     script(src='/javascripts/register-validation.js')
+    script(src='/javascripts/car-rental-ng.js')
+    link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/Footer-with-social-icons.css')
+    link(rel='shortcut icon', href='/images/shortcut_icon.png')
   body
     include navbar
     block content
+  footer
+    include footer

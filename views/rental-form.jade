@@ -1,14 +1,39 @@
-.container
-  form(role="form", method="post", style="max-width: 200px;")
+form.form-horizontal#car-rental-form
+  .form-group
+    label.control-label.col-sm-2(for='pick-up-location') Pick-Up Location:
+    .col-sm-2
+      select#pick-up-location.form-control.empty
+        option(selected disabled, style="display:none;") Select Location
+        option Dallas
+        option Irving
+        option Austin
+        option Houston
     .form-group
-      label Pick-Up Date
-      input.form-control(type="date", name="pick-up", placeHolder="Pick-Up Date")
+      label.control-label.col-sm-2(for='pick-up-date') Pick-Up Date:
+      .col-sm-2
+        input#pick-up-date.form-control(type='date')
+  .form-group
+    label.control-label.col-sm-2(for='drop-off-location') Drop-Off Location:
+    .col-sm-2
+      select#drop-off-location.form-control
+        option(selected disabled, style="display:none;") Select Location
+        option Dallas
+        option Irving
+        option Austin
+        option Houston
     .form-group
-      label Drop-Off Date
-      input.form-control(type="date", name="pick-up", placeHolder="Drop-Off Date")
-    .form-group
-      label Pick-Up Time
-      input.form-control(type="time", name="pick-up", placeHolder="Pick-Up Time")
-    .form-group
-      label Drop-Off Time
-      input.form-control(type="time", name="pick-up", placeHolder="Drop-Off Time")
+      label.control-label.col-sm-2(for='drop-off-date') Drop-Off Date:
+      .col-sm-2
+        input#drop-off-date.form-control(type='date')
+  .form-group
+    label.control-label.col-sm-2(for='car-type') Car Type:
+    .col-sm-2
+      select#car-type.form-control
+        option(selected disabled, style='display:none;') Select Car Type
+        option Hatchback
+        option Sedan
+        option SUV
+        option Semi
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      button.btn.btn-default(type='submit') Submit

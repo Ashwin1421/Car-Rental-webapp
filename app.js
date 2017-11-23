@@ -11,7 +11,8 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var videos = require('./routes/videos');
+var cars = require('./routes/cars');
+//jquery plugin
 var $ = require('cheerio');
 // passport config
 var Account = require('./models/account');
@@ -42,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/api/videos', videos);
+app.use('/api/cars', cars);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
